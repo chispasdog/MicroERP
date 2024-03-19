@@ -29,8 +29,8 @@ git clone URL_DEL_REPOSITORIO_GIT
 ``` 
  
 
- ### licencia
+ ### Licencia
 All content in this repository is licensed under a Creative Commons Attribution-NonCommercial 4.0 International Public License
 
- ### contacto
+ ### Contacto
  [me puedes encontrar aqui ](https://www.linkedin.com/in/pablo-andreu-669a9b273/)
