@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Cliente</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2>Detalle del Cliente</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" th:text="${cliente.nombre}">Nombre del Cliente</h5>
+            <p class="card-text"><strong>DNI:</strong> <span th:text="${cliente.dni}">DNI del Cliente</span></p>
+            <p class="card-text"><strong>Correo:</strong> <span th:text="${cliente.correo}">Correo del Cliente</span></p>
+            <p class="card-text"><strong>Dirección:</strong> <span th:text="${cliente.direccion}">Dirección del Cliente</span></p>
+
+            <h4>Facturas</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Número de Factura</th>
+                        <th>Total</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="factura : ${cliente.facturas}">
+                        <td th:text="${factura.numeroFactura}">Número de Factura</td>
+                        <td th:text="${factura.total}">Total</td>
+                        <td th:text="${#dates.format(factura.fecha, 'dd/MM/yyyy')}">Fecha</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="@{/clientes}" class="btn btn-primary">Volver a la lista</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
